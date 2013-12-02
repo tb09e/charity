@@ -1,26 +1,35 @@
 <h1>Listing of Charities</h1>
 
+<p><%= link_to 'Create new Charity', new_charity_path %></p>
+
+
 <table>
   <tr>
     <th>Name</th>
     <th>Url</th>
-    <th>Zip Id</th>
+    <th>Zip Code</th> <!-- currently showing zip_id -->
     <th></th>
     <th></th>
   </tr>
 
-<% @charities.each do |charity| %>
-  <tr>
-    <td><%= charity.name %></td>
-    <td><%= charity.url %></td>
-    <td><%= charity.zip_id %></td>
-    <td><%= link_to 'Show', charity %></td>
-    <td><%= link_to 'Edit', edit_charity_path(charity) %></td>
-    <td><%= link_to 'Destroy', charity, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
+
+  <% @charities.each do |charity| %>
+      <tr>
+        <td><%= link_to charity.name, charity %></td>
+        <td><%= charity.url %></td>
+        <%# PUT ZIPCODES HERE %>
+
+        <%# end %>
+        <td><%= charity.zip_id %></td>
+        <td><%= link_to 'Edit', edit_charity_path(charity) %></td>
+        <td><%= link_to 'Destroy', charity, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+  <% end %>
+
+
 </table>
-
 <br />
 
-<%= link_to 'New Charity', new_charity_path %>
+<%= paginate @charities %>
+<br />
+
