@@ -7,17 +7,14 @@
 <table>
   <tr>
     <th>Name</th>
-    <th>Zip Code</th> <!-- currently showing zip_id -->
-    <th></th>
-    <th></th>
+    <th>Zip Code</th>
   </tr>
 
 
   <% @charities.each do |charity| %>
       <tr>
         <td><%= link_to charity.name, charity %></td>
-        <% @actualZipCode =ZipCode.find(charity.zip_id)  #need to move this to controller %>
-        <td><%= @actualZipCode.zip %></td>
+        <td><%= getZip(charity) %></td>
         <td><%= link_to 'Edit', edit_charity_path(charity) %></td>
         <td><%= link_to 'Destroy', charity, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>

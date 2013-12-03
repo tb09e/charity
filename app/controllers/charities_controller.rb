@@ -1,8 +1,13 @@
 class CharitiesController < ApplicationController
   # GET /charities
   # GET /charities.json
+
+
   def index
-    @charities = Charity.order("zip_id").page(params[:page]).per(5)
+    @charities = Charity.page(params[:page]).per(2)
+
+
+
 
     respond_to do |format|
       format.html # show.html.erb
@@ -39,10 +44,12 @@ class CharitiesController < ApplicationController
 
   # POST /charities
   # POST /charities.json
+
+
+
   def create
     @charity = Charity.new(params[:charity])
 
-   # @actualZipCode =ZipCode.find(@charity.zip_id)
     respond_to do |format|
       if @charity.save
         format.html { redirect_to @charity, notice: 'Charity was successfully created.' }
