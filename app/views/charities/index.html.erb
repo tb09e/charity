@@ -1,12 +1,12 @@
 <h1>Listing of Charities</h1>
 
-<p><%= link_to 'Create new Charity', new_charity_path %></p>
+<p><%= link_to 'Add a Charity', new_charity_path %></p>
+<p><%= link_to 'Add a ZipCode', new_zip_code_path %></p>
 
 
 <table>
   <tr>
     <th>Name</th>
-    <th>Url</th>
     <th>Zip Code</th> <!-- currently showing zip_id -->
     <th></th>
     <th></th>
@@ -16,11 +16,8 @@
   <% @charities.each do |charity| %>
       <tr>
         <td><%= link_to charity.name, charity %></td>
-        <td><%= charity.url %></td>
-        <%# PUT ZIPCODES HERE %>
-
-        <%# end %>
-        <td><%= charity.zip_id %></td>
+        <% @actualZipCode =ZipCode.find(charity.zip_id)  #need to move this to controller %>
+        <td><%= @actualZipCode.zip %></td>
         <td><%= link_to 'Edit', edit_charity_path(charity) %></td>
         <td><%= link_to 'Destroy', charity, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>

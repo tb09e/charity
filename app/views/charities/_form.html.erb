@@ -19,10 +19,11 @@
     <%= f.label :url %><br />
     <%= f.text_field :url %>
   </div>
-  <div class="field">
-    <%= f.label :zip_id %><br />
-    <%= f.text_field :zip_id %>
-  </div>
+   <div class ="field">
+     <%= f.label :zip_id %><br />
+     <%= f.collection_select(:zip_id, ZipCode.all, :id, :zip) %>
+   </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>

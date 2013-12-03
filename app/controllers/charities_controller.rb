@@ -13,7 +13,6 @@ class CharitiesController < ApplicationController
   # GET /charities/1
   # GET /charities/1.json
   def show
-    @zipcode = ZipCode.new
     @charity = Charity.find(params[:id])
 
     respond_to do |format|
@@ -43,6 +42,7 @@ class CharitiesController < ApplicationController
   def create
     @charity = Charity.new(params[:charity])
 
+   # @actualZipCode =ZipCode.find(@charity.zip_id)
     respond_to do |format|
       if @charity.save
         format.html { redirect_to @charity, notice: 'Charity was successfully created.' }
