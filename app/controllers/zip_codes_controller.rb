@@ -2,7 +2,7 @@ class ZipCodesController < ApplicationController
   # GET /zip_codes
   # GET /zip_codes.json
   def index
-    @zip_codes = ZipCode.all
+    @zip_codes = ZipCode.order(:zip)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -40,9 +40,11 @@ class ZipCodesController < ApplicationController
   # POST /zip_codes
   # POST /zip_codes.json
   def create
+
     @zip_code = ZipCode.new(params[:zip_code])
 
     respond_to do |format|
+
       if @zip_code.save
         format.html { redirect_to @zip_code, notice: 'Zip code was successfully created.' }
         format.json { render json: @zip_code, status: :created, location: @zip_code }

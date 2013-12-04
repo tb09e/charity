@@ -1,5 +1,7 @@
 <p id="notice"><%= notice %></p>
-
+<p>
+  <%= image_tag @charity.photo.url(:small) %>
+</p>
 <p>
   <b>Name:</b>
   <%= @charity.name %>
@@ -7,7 +9,7 @@
 
 <p>
   <b>Url:</b>
-  <%= @charity.url %>
+  <%= link_to @charity.url, @charity.url %>
 </p>
 
 <p>

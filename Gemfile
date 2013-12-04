@@ -2,6 +2,10 @@ source 'https://rubygems.org'
 
 gem 'kaminari'
 
+gem 'cocaine'
+
+gem 'paperclip'
+
 gem 'rails', '3.2.13'
 
 # Bundle edge Rails instead:

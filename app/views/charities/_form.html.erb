@@ -1,4 +1,4 @@
-<%= form_for(@charity) do |f| %>
+<%= form_for(@charity)  do |f| %>
   <% if @charity.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@charity.errors.count, "error") %> prohibited this charity from being saved:</h2>
@@ -23,6 +23,10 @@
      <%= f.label "Zipcode" %><br />
      <%= f.collection_select(:zip_code_id, ZipCode.order("zip ASC"), :id, :zip) %>
    </div>
+  <p>
+    <%= f.label "Upload a Photo" %><br />
+    <%= f.file_field :photo %><br />
+  </p>
 
   <div class="actions">
     <%= f.submit %>

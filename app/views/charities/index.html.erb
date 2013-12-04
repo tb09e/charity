@@ -1,18 +1,23 @@
 <h1>Listing of Charities</h1>
 
-<p><%= link_to 'Add a Charity', new_charity_path %></p>
-<p><%= link_to 'Add a ZipCode', new_zip_code_path %></p>
+<p><%= link_to 'Add a Charity', new_charity_path %> |
+<%= link_to 'Add a ZipCode', new_zip_code_path %> |
+<%= link_to 'See ZipCodes', zip_codes_path%></p>
 
 
 <table>
   <tr>
+    <th>Logo</th>
     <th>Name</th>
     <th>Zip Code</th>
+    <th></th>
+    <th></th>
   </tr>
 
 
   <% @charities.each do |charity| %>
       <tr>
+        <td> <%= image_tag charity.photo.url(:thumb) %></td>
         <td><%= link_to charity.name, charity %></td>
         <td><%= getZip(charity) %></td>
         <td><%= link_to 'Edit', edit_charity_path(charity) %></td>
@@ -22,8 +27,7 @@
 
 
 </table>
+
 <br />
 
 <%= paginate @charities %>
-<br />
-
