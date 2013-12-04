@@ -1,9 +1,9 @@
 charity
 =======
 Toyanne Bennett
-===
-11/26/2013
-Last Updated: 12/4/2013:
+=
+*Created on: 11/26/2013
+*Last Updated: 12/4/2013:
 
 
 A ruby on rails application that lists charities, but sorted via zip code.
