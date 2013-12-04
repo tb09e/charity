@@ -1,5 +1,5 @@
 class AddZipIdToCharities < ActiveRecord::Migration
   def change
-    add_column :charities, :zip_id, :integer
+    add_column :charities, :zip_code_id, :integer
   end
 end
