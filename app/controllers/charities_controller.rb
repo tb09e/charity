@@ -4,9 +4,7 @@ class CharitiesController < ApplicationController
 
 
   def index
-    @charities = Charity.page(params[:page]).per(2)
-
-
+    @charities = Charity.joins(:zip_code).order('zip_codes.zip').page(params[:page]).per(2)
 
 
     respond_to do |format|

@@ -1,9 +1,7 @@
 module ApplicationHelper
 
   def getZip(charity)
-    ZipCode.find(charity.zip_id).zip
+    ZipCode.find(charity.zip_code_id).zip
   end
-
-
 
 end

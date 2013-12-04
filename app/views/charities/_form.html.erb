@@ -20,8 +20,8 @@
     <%= f.text_field :url %>
   </div>
    <div class ="field">
-     <%= f.label :zip_id %><br />
-     <%= f.collection_select(:zip_id, ZipCode.all, :id, :zip) %>
+     <%= f.label "Zipcode" %><br />
+     <%= f.collection_select(:zip_code_id, ZipCode.order("zip ASC"), :id, :zip) %>
    </div>
 
   <div class="actions">
