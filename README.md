@@ -8,13 +8,15 @@ Last Updated: 12/4/2013:
 A ruby on rails application that lists charities, but sorted via zip code.
 
 
-==Functionality:
+Functionality:
+==
 	*Add new zipcode
 	*Add new charity
 	*Pagination on homepage
 	*Associated logo
 	*Regex zip validation (no actually exists check)
-==Constaints:
+Constaints:
+==
 	*There can be many charities to one zipcode, but only one zipcode to a charity.
 
 
