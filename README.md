@@ -19,6 +19,6 @@ Functionality:
 Constraints:
 ====
 	*Many Charities to one ZipCode
-	*Only one ZipeCode to a Charity
+	*Only one ZipCode to a Charity
 
 
