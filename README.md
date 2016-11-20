@@ -2,7 +2,7 @@ Charity Organizations
 ======
 A web application built on the Ruby on Rails Framework that lists charities sorted by zipcode.
 
-	Toyanne Bennett
+	T Bennett
 	Created on: 11/26/2013
 	Last Updated: 12/4/2013
 
